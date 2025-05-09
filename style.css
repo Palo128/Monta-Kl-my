@@ -1,0 +1,472 @@
+/* Základný reset a box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333; /* Tmavo šedá pre text */
+    background-color: #f4f7f6; /* Veľmi svetlo šedá */
+    overflow-x: hidden; /* Zabráni horizontálnemu posúvaniu */
+}
+
+/* Kontajner pre centrovanie obsahu */
+.container {
+    width: 90%;
+    max-width: 1200px; /* Maximálna šírka stránky */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hlavička */
+header {
+    background-color: rgba(255, 255, 255, 0.95); /* Takmer biela s jemnou priehľadnosťou */
+    padding: 15px 0;
+    position: fixed; /* Pevná pozícia navrchu */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Zabezpečí, že hlavička bude nad ostatným obsahom */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Jemný tieň */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #0056b3; /* Tmavší modrý odtieň */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333; /* Tmavo šedá */
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #007bff; /* Svetlejší modrý odtieň */
+}
+
+/* Hero sekcia */
+#hero {
+    position: relative;
+    height: 100vh; /* Výška celej obrazovky */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    overflow: hidden; /* Dôležité pre orezanie pozadia */
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.hero-background img,
+.hero-background video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Pokryje celú plochu bez skreslenia */
+    filter: brightness(50%); /* Stmaví obrázok, aby bol text čitateľnejší */
+}
+
+.hero-content {
+    position: relative; /* Zabezpečí, že obsah bude nad pozadím */
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+#hero h1 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+#hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Všeobecné styly sekcií */
+.section-padding {
+    padding: 80px 0; /* Priestor nad a pod sekciou */
+}
+
+.bg-light-blue {
+    background-color: #e9f5ff; /* Veľmi svetlý modrý odtieň */
+}
+
+h2 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #0056b3; /* Tmavší modrý odtieň */
+}
+
+/* Stylovanie dlaždíc */
+.tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responzívne dlaždice */
+    gap: 30px; /* Medzera medzi dlaždicami */
+}
+
+.tile {
+    background-color: #fff; /* Biely podklad dlaždice */
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Jemný tieň */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tile:hover {
+    transform: translateY(-10px); /* Jemný posun nahor pri nabehnutí myšou */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.tile h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    color: #007bff; /* Svetlejší modrý odtieň */
+}
+
+.tile p {
+    color: #555;
+}
+
+.tile .price {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #28a745; /* Zelená farba pre cenu */
+    margin-top: 15px;
+}
+
+.note {
+    text-align: center;
+    margin-top: 30px;
+    font-style: italic;
+    color: #777;
+}
+
+/* Kontakt sekcia */
+#kontakt {
+    text-align: center;
+}
+
+#kontakt p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+#kontakt a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#kontakt a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Tlačidlo */
+.btn {
+    display: inline-block;
+    background-color: #007bff; /* Svetlejší modrý */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    text-decoration: none; /* Pre použitie na <a> aj <button> */
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Tmavší modrý */
+}
+
+#kontakt .btn {
+    margin-top: 20px;
+}
+
+/* Pätička */
+footer {
+    background-color: #333; /* Tmavo šedá */
+    color: white;
+    padding: 30px 0;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links a {
+    color: #aaa; /* Svetlo šedá */
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Modal (Vyskakovacie okno) */
+.modal {
+    display: none; /* Predvolene skryté */
+    position: fixed; /* Fixná pozícia */
+    z-index: 2000; /* Nad všetkým ostatným */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Povolenie posúvania, ak je obsah veľký */
+    background-color: rgba(0,0,0,0.5); /* Polopriehľadné pozadie */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 5% od vrchu, centrované horizontálne */
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px; /* Maximálna šírka formulára */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    position: relative;
+    animation-name: animatetop; /* Animácia zobrazenia */
+    animation-duration: 0.4s
+}
+
+/* Animácia zobrazenia modalu */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #777;
+    text-decoration: none;
+}
+
+/* Styly formulára */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block; /* Každá popiska na novom riadku */
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none; /* Odstráni predvolený modrý obrys */
+}
+
+.form-group textarea {
+    resize: vertical; /* Povoliť zmenu výšky, nie šírky */
+}
+
+/* Stylovanie file input (ťažšie na jednotné stylovanie, ponecháme základné) */
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 8px 0; /* Menej paddingu */
+}
+
+/* Stylovanie range input (slider) */
+.form-group input[type="range"] {
+    width: 100%;
+    -webkit-appearance: none; /* Pre Safari */
+    appearance: none;
+    height: 8px;
+    background: #ddd;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+    border-radius: 5px;
+}
+
+.form-group input[type="range"]:hover {
+    opacity: 1;
+}
+
+/* Palec slidra */
+.form-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #007bff; /* Modrý palec */
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.form-group input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #007bff;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+/* Stylovanie radio buttonov */
+.radio-group {
+    margin-top: 10px;
+    display: flex; /* Usporiadanie v riadku */
+    flex-wrap: wrap; /* Zalamovanie na menších obrazovkách */
+    gap: 15px; /* Medzera medzi voľbami */
+}
+
+.radio-group input[type="radio"] {
+    display: none; /* Skryť pôvodné radio buttony */
+}
+
+.radio-group label {
+    display: inline-block;
+    background-color: #eee; /* Svetlo šedé pozadie pre nes vybrané */
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 400; /* Normálna váha písma */
+    color: #555;
+}
+
+.radio-group input[type="radio"]:checked + label {
+    background-color: #007bff; /* Modré pozadie pre vybrané */
+    color: white;
+    font-weight: 700; /* Tučné písmo pre vybrané */
+}
+
+.radio-group label:hover {
+     background-color: #ddd;
+}
+
+/* Tlačidlo v modali */
+.modal-content .btn {
+    width: 100%; /* Tlačidlo na celú šírku */
+    padding: 15px;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+/* Responzívny dizajn */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column; /* Na menších obrazovkách pod seba */
+    }
+    nav ul {
+        margin-top: 15px;
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 0 10px; /* Menšie medzery */
+    }
+    #hero h1 {
+        font-size: 2em;
+    }
+    #hero p {
+        font-size: 1em;
+    }
+    .section-padding {
+        padding: 60px 0;
+    }
+    h2 {
+        font-size: 1.7em;
+        margin-bottom: 40px;
+    }
+    .tiles {
+         grid-template-columns: 1fr; /* Na malých obrazovkách jeden stĺpec */
+    }
+    .tile {
+        padding: 20px;
+    }
+     .modal-content {
+        padding: 20px;
+        margin: 10% auto; /* Viac priestoru od vrchu */
+    }
+     .radio-group {
+         flex-direction: column; /* Voľby pod sebou */
+         gap: 10px;
+     }
+     .radio-group label {
+         text-align: center;
+     }
+}
+
+/* Animácie pri posúvaní (jednoduchý fade-in) */
+/* Trieda sa pridá JavaScriptom, keď je sekcia vo viewporte */
+.section-hidden {
+    opacity: 0;
+    transform: translateY(50px); /* Posun zospodu */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

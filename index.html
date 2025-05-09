@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montáž Klimy - Váš Komfortný Domov</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Montáž Klimy</div>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Úvod</a></li>
+                    <li><a href="#ponuka">Ponuka</a></li>
+                    <li><a href="#cennik">Cenník</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="hero-background">
+            <img src="background1.png" alt="Pozadie - moderný interiér s klimatizáciou">
+            </div>
+        <div class="hero-content">
+            <h1>Zažite domov plný dokonalého komfortu.</h1>
+            <p>Čistý vzduch a ideálna teplota po celý rok. Vaša oáza pohody za každého počasia.</p>
+            <button id="open-consultation-modal" class="btn">Získať nezáväznú konzultáciu</button>
+        </div>
+    </section>
+
+    <section id="ponuka" class="section-padding">
+        <div class="container">
+            <h2>Naša ponuka</h2>
+            <div class="tiles">
+                <div class="tile">
+                    <h3>Montáž klimatizácií</h3>
+                    <p>Odborná inštalácia rôznych typov klimatizačných systémov pre domácnosti aj firmy.</p>
+                </div>
+                <div class="tile">
+                    <h3>Servis a údržba</h3>
+                    <p>Pravidelná kontrola a údržba pre dlhú životnosť a optimálny výkon vašej klimatizácie.</p>
+                </div>
+                <div class="tile">
+                    <h3>Poradenstvo</h3>
+                    <p>Pomôžeme vám vybrať najvhodnejšie riešenie presne pre vaše potreby a priestor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cennik" class="section-padding bg-light-blue">
+        <div class="container">
+            <h2>Cenník</h2>
+            <div class="tiles">
+                 <div class="tile">
+                    <h3>Štandardná montáž</h3>
+                    <p>Montáž splitovej jednotky do 3 metrov potrubia.</p>
+                    <p class="price">od 250 €</p>
+                </div>
+                <div class="tile">
+                    <h3>Komplexná inštalácia</h3>
+                    <p>Náročnejšie inštalácie, multi-split systémy, alebo inštalácie s dlhším potrubím.</p>
+                    <p class="price">individuálna cena</p>
+                </div>
+                <div class="tile">
+                    <h3>Servisná prehliadka</h3>
+                    <p>Kompletná kontrola, čistenie a doplnenie chladiva.</p>
+                     <p class="price">od 80 €</p>
+                </div>
+            </div>
+            <p class="note">* Ceny sú orientačné, presnú cenu určíme po obhliadke.</p>
+        </div>
+    </section>
+
+     <section id="kontakt" class="section-padding">
+        <div class="container">
+            <h2>Kontakt</h2>
+            <p>Máte záujem o konzultáciu alebo sa chcete na niečo opýtať?</p>
+            <p>Telefón: <a href="tel:+4219XXYYYYYY">+421 9XX YYYYYY</a></p>
+            <p>Email: <a href="mailto:info@montazklimy.sk">info@montazklimy.sk</a></p>
+             <button id="open-consultation-modal-bottom" class="btn">Získať nezáväznú konzultáciu</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 Montáž Klimy. Všetky práva vyhradené.</p>
+            <div class="footer-links">
+                <a href="#">Zásady ochrany osobných údajov (GDPR)</a>
+                <a href="#">Obchodné podmienky</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="consultation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <h3>Získať nezáväznú konzultáciu</h3>
+            <form id="consultation-form">
+                <div class="form-group">
+                    <label for="meno">Meno:</label>
+                    <input type="text" id="meno" name="meno" required>
+                </div>
+                 <div class="form-group">
+                    <label for="priezvisko">Priezvisko:</label>
+                    <input type="text" id="priezvisko" name="priezvisko" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                 <div class="form-group">
+                    <label for="telefon">Telefón:</label>
+                    <input type="tel" id="telefon" name="telefon" required>
+                </div>
+                <div class="form-group">
+                    <label for="sprava">Správa / Popis:</label>
+                    <textarea id="sprava" name="sprava" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="fotka">Nahrať fotku priestoru (nepovinné):</label>
+                    <input type="file" id="fotka" name="fotka" accept="image/*">
+                </div>
+                 <div class="form-group">
+                    <label for="klima-typ">Typ klimatizácie (nepovinné):</label>
+                    <p>Predstava o výkone (v kW): <span id="klima-vykon-value">5 kW</span></p>
+                    <input type="range" id="klima-vykon" name="klima-vykon" min="2" max="15" value="5" step="0.5">
+                    <label>Preferovaný typ (nepovinné):</label>
+                     <div class="radio-group">
+                         <input type="radio" id="typ-split" name="preferovany-typ" value="split">
+                         <label for="typ-split">Split</label>
+                         <input type="radio" id="typ-multisplit" name="preferovany-typ" value="multisplit">
+                         <label for="typ-multisplit">Multi-split</label>
+                         <input type="radio" id="typ-kazetova" name="preferovany-typ" value="kazetova">
+                         <label for="typ-kazetova">Kazetová</label>
+                          <input type="radio" id="typ-neznamy" name="preferovany-typ" value="neznamy" checked>
+                         <label for="typ-neznamy">Neviem</label>
+                     </div>
+                </div>
+                <button type="submit" class="btn">Odoslať konzultáciu</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
