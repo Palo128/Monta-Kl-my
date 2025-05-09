@@ -93,6 +93,8 @@ nav ul li a:hover {
     height: 100%;
     object-fit: cover; /* Pokryje celú plochu bez skreslenia */
     filter: brightness(50%); /* Stmaví obrázok, aby bol text čitateľnejší */
+    /* Predvolené centrovanie pre väčšie obrazovky */
+    object-position: center;
 }
 
 .hero-content {
@@ -455,6 +457,12 @@ footer .container {
      }
      .radio-group label {
          text-align: center;
+     }
+
+     /* Úprava pozície obrázka na pozadí v hero sekcii pre mobil */
+     #hero .hero-background img,
+     #hero .hero-background video {
+         object-position: left; /* Centrovanie doľava na mobiloch */
      }
 }
 
