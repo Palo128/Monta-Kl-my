@@ -462,7 +462,8 @@ footer .container {
      /* Úprava pozície obrázka na pozadí v hero sekcii pre mobil */
      #hero .hero-background img,
      #hero .hero-background video {
-         object-position: left; /* Centrovanie doľava na mobiloch */
+         /* Posunutie o 30% doprava od ľavého okraja */
+         object-position: 30% center;
      }
 }
 
